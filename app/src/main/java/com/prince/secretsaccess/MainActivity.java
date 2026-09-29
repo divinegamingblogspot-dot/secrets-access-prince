@@ -8,5 +8,5 @@ public class MainActivity extends Activity{
  String get(String l,String k){String q="\\\""+k+"\\\":\\\"";int a=l.indexOf(q);if(a<0)return "";a+=q.length();int b=l.indexOf("\\\"",a);return b<0?"":l.substring(a,b).replace("\\\\\"", "\\\"");}
  String esc(String s){return s==null?"":s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;");}
  String attr(String s){return esc(s).replace("\"", "&quot;");}
- String read(InputStream in)throws Exception{try(BufferedReader b=new BufferedReader(new InputStreamReader(in,StandardCharsets.UTF_8))){StringBuilder s=new StringBuilder();String x;while((x=b.readLine())!=null)s.append(x).append('\\n');return s.toString();}}
+ String read(InputStream in)throws Exception{try(BufferedReader b=new BufferedReader(new InputStreamReader(in,StandardCharsets.UTF_8))){StringBuilder s=new StringBuilder();String x;while((x=b.readLine())!=null)s.append(x).append("\n");return s.toString();}}
 }
